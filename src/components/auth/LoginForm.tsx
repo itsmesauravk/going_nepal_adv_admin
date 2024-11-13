@@ -1,11 +1,17 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
-const AdminLogin: React.FC = () => {
+const LoginForm: React.FC = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
+
+  useEffect(() => {
+    setEmail("")
+    setPassword("")
+    setError("")
+  }, [])
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
@@ -91,4 +97,4 @@ const AdminLogin: React.FC = () => {
   )
 }
 
-export default AdminLogin
+export default LoginForm
